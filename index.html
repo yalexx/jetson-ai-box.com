@@ -3,246 +3,462 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OpenClaw NVIDIA Jetson AI Box – Orin Nano Pre-Configured</title>
-<meta name="description" content="OpenClaw NVIDIA Jetson AI box: the ClawBox runs on Jetson Orin Nano with 67 TOPS. Pre-configured NVIDIA AI box with OpenClaw. Jetson Nano OpenClaw ready. €399.">
-<meta name="keywords" content="openclaw nvidia, nvidia openclaw, nvidia ai box, openclaw jetson nano, jetson ai box, jetson nano openclaw, nvidia jetson orin nano, openclaw jetson">
+<title>NVIDIA Jetson AI Box – Private Local LLM Hardware | OpenClaw</title>
+<meta name="description" content="NVIDIA Jetson AI box: run private AI locally on Orin Nano. 67 TOPS, OpenClaw pre-installed. Local LLM hardware — no cloud, no subscriptions. €399.">
+<meta name="keywords" content="jetson ai box, nvidia jetson ai, jetson orin nano ai box, local llm hardware, private chatgpt alternative, edge ai hardware, openclaw jetson">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://jetson-ai-box.com/">
-<meta property="og:title" content="OpenClaw NVIDIA Jetson AI Box – Orin Nano Pre-Configured">
-<meta property="og:description" content="NVIDIA Jetson AI box with OpenClaw. 67 TOPS, pre-configured. €399.">
+<meta property="og:title" content="NVIDIA Jetson AI Box – Private Local LLM Hardware">
+<meta property="og:description" content="Run private AI on NVIDIA Jetson. 67 TOPS, pre-configured. €399.">
 <meta property="og:url" content="https://jetson-ai-box.com/">
 <meta property="og:image" content="https://openclawhardware.dev/clawbox-1.webp">
 <meta property="og:type" content="product">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="OpenClaw NVIDIA Jetson AI Box – Orin Nano Pre-Configured">
-<meta name="twitter:description" content="NVIDIA Jetson AI box with OpenClaw. 67 TOPS, pre-configured. €399.">
+<meta name="twitter:title" content="NVIDIA Jetson AI Box – Private Local LLM Hardware">
 <meta name="twitter:image" content="https://openclawhardware.dev/clawbox-1.webp">
-<!-- redirect removed for SEO -->
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Product","name":"ClawBox","description":"OpenClaw NVIDIA Jetson AI box: Orin Nano 8GB, 67 TOPS, 512GB NVMe, pre-configured.","brand":{"@type":"Brand","name":"OpenClaw Hardware"},"image":"https://openclawhardware.dev/clawbox-1.webp","url":"https://openclawhardware.dev/jetson-ai-assistant","offers":{"@type":"Offer","price":"399","priceCurrency":"EUR","availability":"https://schema.org/PreOrder"}}
+{"@context":"https://schema.org","@type":"Product","name":"ClawBox","description":"NVIDIA Jetson AI box with OpenClaw pre-installed. 67 TOPS, 512GB NVMe, carbon fiber case.","brand":{"@type":"Brand","name":"OpenClaw Hardware"},"image":"https://openclawhardware.dev/clawbox-1.webp","url":"https://jetson-ai-box.com/","offers":{"@type":"Offer","price":"399","priceCurrency":"EUR","availability":"https://schema.org/InStock"}}
 </script>
-<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"What is a Jetson AI box?","acceptedAnswer":{"@type":"Answer","text":"A Jetson AI box is a dedicated hardware device built on NVIDIA's Jetson platform that runs AI models locally. It functions as a private ChatGPT alternative — processing everything on-device with no cloud dependency, no monthly fees, and complete data privacy."}},
+{"@type":"Question","name":"Why use a Jetson AI box instead of ChatGPT?","acceptedAnswer":{"@type":"Answer","text":"Three reasons: Privacy (data never leaves your network), Cost (€399 one-time vs $240/year for ChatGPT Plus), and Reliability (works offline, no API rate limits). Plus you get browser automation and multi-platform messaging that cloud AI doesn't offer."}},
+{"@type":"Question","name":"How much does it cost to run a Jetson AI box 24/7?","acceptedAnswer":{"@type":"Answer","text":"About €15 per year in electricity. The NVIDIA Jetson Orin Nano draws just 15 watts — less than an LED light bulb. Compare that to ChatGPT Plus at $240/year or a cloud VPS at $600+/year."}}
+]}
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Rubik',sans-serif;background:#0c0a09;color:#e2e8f0;min-height:100vh;line-height:1.7}
-.hero{text-align:center;padding:60px 20px 40px}
-.hero h1{font-size:clamp(1.8rem,5vw,2.8rem);color:#22d3ee;margin-bottom:16px;font-weight:700}
-.hero p{max-width:680px;margin:0 auto;font-size:1.1rem;color:#e2e8f0;opacity:.85}
-.layers{max-width:860px;margin:50px auto;padding:0 20px}
-.layer{background:#1c1917;border-radius:16px;padding:32px;margin-bottom:4px;border-left:4px solid #22d3ee;position:relative}
-.layer:nth-child(1){margin-left:0}
-.layer:nth-child(2){margin-left:20px;border-left-color:#06b6d4}
-.layer:nth-child(3){margin-left:40px;border-left-color:#0891b2}
-.layer:nth-child(4){margin-left:20px;border-left-color:#06b6d4}
-.layer:nth-child(5){margin-left:0;border-left-color:#22d3ee}
-.layer:nth-child(6){margin-left:20px;border-left-color:#06b6d4}
-.layer-header{display:flex;align-items:center;gap:12px;margin-bottom:10px}
-.layer-header .icon{font-size:1.8rem}
-.layer-header .label{font-size:.7rem;text-transform:uppercase;letter-spacing:2px;color:#22d3ee;font-weight:600}
-.layer h3{color:#22d3ee;margin-bottom:8px;font-size:1.15rem;font-weight:600}
-.layer p{color:#e2e8f0;font-size:.93rem;opacity:.78}
-.summary{max-width:700px;margin:30px auto;padding:0 20px;color:#e2e8f0;font-size:.95rem;text-align:center;opacity:.8}
-.cta{text-align:center;padding:50px 20px}
-.cta h2{color:#e2e8f0;margin-bottom:20px;font-size:1.3rem}
-.cta a{display:inline-block;padding:16px 40px;background:linear-gradient(135deg,#22d3ee,#06b6d4);color:#0c0a09;text-decoration:none;border-radius:12px;font-size:1.15rem;font-weight:700;transition:transform .2s}
-.cta a:hover{transform:scale(1.05)}
-.redirect{text-align:center;padding:20px;color:#e2e8f0;font-size:.8rem;opacity:.35}
+body{font-family:'Inter',system-ui,sans-serif;background:#0a0a0a;color:#e0e0e0;font-size:18px;line-height:1.7}
+a{color:inherit;text-decoration:none}
+
+/* Sticky Header */
+.sticky-nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,10,0.9);backdrop-filter:blur(12px);border-bottom:1px solid #1a1a1a;padding:12px 24px;display:flex;justify-content:space-between;align-items:center}
+.sticky-nav .logo{font-weight:700;color:#22d3ee;font-size:1rem}
+.sticky-nav .nav-cta{padding:8px 20px;background:linear-gradient(135deg,#22d3ee,#06b6d4);color:#000;border-radius:8px;font-weight:700;font-size:.85rem;transition:transform .2s}
+.sticky-nav .nav-cta:hover{transform:translateY(-1px)}
+
+/* Hero */
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:100px 24px 60px;background:linear-gradient(135deg,#020a0d 0%,#0d1117 40%,#021014 100%)}
+.hero-inner{max-width:1100px;width:100%;display:flex;align-items:center;gap:60px;flex-wrap:wrap}
+.hero-text{flex:1;min-width:320px}
+.hero-image{flex:0 0 380px;text-align:center}
+.hero-image img{width:100%;max-width:380px;border-radius:16px;box-shadow:0 20px 60px rgba(34,211,238,0.12)}
+.badge{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;background:rgba(34,211,238,0.1);border:1px solid rgba(34,211,238,0.3);border-radius:24px;font-size:.8rem;color:#22d3ee;font-weight:600;margin-bottom:24px;letter-spacing:.5px;text-transform:uppercase}
+h1{font-size:clamp(2.4rem,5vw,3.6rem);font-weight:800;line-height:1.1;margin-bottom:20px;color:#f5f5f5}
+h1 span{background:linear-gradient(135deg,#22d3ee,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.subtitle{font-size:1.15rem;color:#9ca3af;margin-bottom:32px;max-width:540px;line-height:1.7}
+.subtitle strong{color:#d1d5db}
+.hero-buttons{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:32px}
+.btn-primary{display:inline-flex;align-items:center;gap:8px;padding:16px 32px;background:linear-gradient(135deg,#22d3ee,#06b6d4);color:#000;border-radius:12px;font-size:1.05rem;font-weight:700;transition:transform .2s,box-shadow .2s;border:none;cursor:pointer}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(34,211,238,0.3)}
+.btn-secondary{display:inline-flex;align-items:center;gap:8px;padding:16px 32px;background:transparent;color:#22d3ee;border:2px solid rgba(34,211,238,0.4);border-radius:12px;font-size:1.05rem;font-weight:600;transition:all .2s}
+.btn-secondary:hover{background:rgba(34,211,238,0.1);border-color:#22d3ee}
+.trust-row{display:flex;gap:24px;flex-wrap:wrap;font-size:.85rem;color:#6b7280}
+.trust-row span{display:flex;align-items:center;gap:6px}
+
+/* Social Proof */
+.social-proof{background:#111;border-top:1px solid #1a1a1a;border-bottom:1px solid #1a1a1a;padding:32px 24px;text-align:center}
+.social-proof p{color:#6b7280;font-size:.9rem;margin-bottom:16px;text-transform:uppercase;letter-spacing:1px;font-weight:500}
+.logos{display:flex;justify-content:center;gap:40px;flex-wrap:wrap;align-items:center;opacity:.6}
+.logos span{font-size:.95rem;color:#9ca3af;font-weight:600}
+
+/* Section */
+section{padding:80px 24px}
+.s-dark{background:#0d1117}
+.s-light{background:#0a0a0a}
+.section-inner{max-width:1000px;margin:0 auto}
+.section-title{font-size:clamp(1.6rem,3vw,2.2rem);font-weight:700;text-align:center;margin-bottom:16px;color:#f5f5f5}
+.section-subtitle{text-align:center;color:#9ca3af;font-size:1.05rem;margin-bottom:48px;max-width:640px;margin-left:auto;margin-right:auto}
+
+/* Why Go Local */
+.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
+.why-card{background:#161b22;border:1px solid #21262d;border-radius:16px;padding:32px;transition:border-color .3s,transform .3s}
+.why-card:hover{border-color:rgba(34,211,238,0.3);transform:translateY(-4px)}
+.why-card .icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:16px;background:rgba(34,211,238,0.1)}
+.why-card h3{font-size:1.1rem;font-weight:700;color:#f5f5f5;margin-bottom:10px}
+.why-card p{color:#9ca3af;font-size:.95rem;line-height:1.7}
+
+/* ROI Calculator */
+.roi-section{background:#0d1117}
+.roi-box{max-width:700px;margin:0 auto;background:#161b22;border:1px solid #21262d;border-radius:16px;padding:40px 32px;text-align:center}
+.roi-box label{display:block;color:#9ca3af;font-size:1rem;margin-bottom:12px}
+.roi-slider{width:100%;max-width:500px;margin:0 auto 24px;display:block;accent-color:#22d3ee;height:8px}
+.roi-result{font-size:1.4rem;font-weight:700;margin-bottom:8px}
+.roi-result .months{color:#22d3ee;font-size:2rem}
+.roi-detail{color:#6b7280;font-size:.9rem}
+
+/* Features 2x3 Grid */
+.feat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.feat-card{background:#161b22;border:1px solid #21262d;border-radius:16px;padding:28px;display:flex;gap:16px;align-items:flex-start;transition:border-color .3s}
+.feat-card:hover{border-color:rgba(34,211,238,0.3)}
+.feat-card .fi{width:44px;height:44px;border-radius:10px;background:rgba(34,211,238,0.1);display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0}
+.feat-card h3{font-size:1rem;font-weight:700;color:#f5f5f5;margin-bottom:6px}
+.feat-card p{color:#9ca3af;font-size:.9rem;line-height:1.6}
+
+/* Steps */
+.steps-row{display:flex;gap:0;flex-wrap:wrap;justify-content:center}
+.step{flex:1;min-width:200px;max-width:260px;text-align:center;padding:32px 20px;position:relative}
+.step::after{content:'→';position:absolute;right:-12px;top:50%;transform:translateY(-50%);color:#22d3ee;font-size:1.5rem;font-weight:700}
+.step:last-child::after{display:none}
+.step-num{width:52px;height:52px;background:linear-gradient(135deg,#22d3ee,#06b6d4);color:#000;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.2rem;font-weight:800;margin:0 auto 16px;box-shadow:0 4px 16px rgba(34,211,238,0.3)}
+.step h3{font-size:1rem;font-weight:700;color:#f5f5f5;margin-bottom:8px}
+.step p{font-size:.88rem;color:#9ca3af;line-height:1.6}
+
+/* Comparison */
+.table-scroll{overflow-x:auto;border-radius:16px}
+.compare-table{width:100%;border-collapse:collapse;background:#161b22;border-radius:16px;overflow:hidden;border:1px solid #21262d;min-width:650px}
+.compare-table thead th{background:#0c3a44;color:#22d3ee;padding:18px 14px;font-weight:700;font-size:.9rem;text-align:left;border-bottom:2px solid #22d3ee}
+.compare-table thead th:first-child{color:#9ca3af}
+.compare-table tbody td{padding:14px;border-bottom:1px solid #21262d;font-size:.9rem;color:#9ca3af}
+.compare-table tbody td:nth-child(2){color:#22d3ee;font-weight:700;background:rgba(34,211,238,0.04)}
+.compare-table tbody tr:last-child td{border-bottom:none}
+.check{color:#6ee7b7;font-size:1.1rem}
+.cross{color:#f87171;font-size:1.1rem}
+
+/* FAQ */
+.faq-item{margin-bottom:12px}
+.faq-item details{background:#161b22;border-radius:12px;border:1px solid #21262d;overflow:hidden}
+.faq-item summary{padding:22px 24px;cursor:pointer;font-weight:600;font-size:1.05rem;color:#f5f5f5;list-style:none;display:flex;justify-content:space-between;align-items:center;transition:background .2s}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:'+';font-size:1.4rem;color:#22d3ee;font-weight:300}
+.faq-item details[open] summary::after{content:'−'}
+.faq-item details[open] summary{background:rgba(34,211,238,0.05);border-bottom:1px solid #21262d}
+.faq-item .faq-body{padding:20px 24px;color:#9ca3af;line-height:1.8;font-size:.95rem}
+
+/* Related */
+.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+.related-grid a{display:block;padding:16px 20px;background:#161b22;border:1px solid #21262d;border-radius:10px;color:#22d3ee;font-weight:600;font-size:.95rem;transition:all .2s;text-align:center}
+.related-grid a:hover{border-color:#22d3ee;background:rgba(34,211,238,0.05);transform:translateY(-2px)}
+
+/* CTA */
+.final-cta{background:linear-gradient(135deg,#020a0d,#0c3a44);padding:80px 24px;text-align:center}
+.final-cta h2{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;color:#f5f5f5;margin-bottom:12px}
+.final-cta .price{font-size:1.1rem;color:#22d3ee;margin-bottom:8px;font-weight:600}
+.final-cta .guarantee{color:#6b7280;font-size:.9rem;margin-bottom:32px}
+
+.seo-block{max-width:800px;margin:0 auto;padding:40px 24px;color:#6b7280;font-size:.85rem;text-align:center;line-height:1.8}
+
+@media(max-width:768px){
+  .sticky-nav .logo{font-size:.85rem}
+  .hero-inner{flex-direction:column;text-align:center}
+  .subtitle{margin-left:auto;margin-right:auto}
+  .hero-buttons{justify-content:center}
+  .hero-image{flex:0 0 auto}
+  .hero-image img{max-width:280px}
+  .trust-row{justify-content:center}
+  .feat-grid{grid-template-columns:1fr}
+  .step::after{display:none}
+  .steps-row{flex-direction:column;align-items:center}
+  .step{max-width:100%}
+}
 </style>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q9FY8Q06EX"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-Q9FY8Q06EX');</script>
 </head>
 <body>
+
+<!-- Sticky Nav -->
+<nav class="sticky-nav">
+<span class="logo">Jetson AI Box Guide</span>
+<a href="https://openclawhardware.dev/" class="nav-cta">Get ClawBox — €399</a>
+</nav>
+
+<!-- Hero -->
 <section class="hero">
-<h1>NVIDIA Jetson AI Box: OpenClaw on Orin Nano</h1>
-<p>The ClawBox is the ultimate <strong>NVIDIA Jetson AI box</strong> — <strong>OpenClaw NVIDIA</strong> integration on the Jetson Orin Nano platform. 67 TOPS of AI performance, pre-configured with OpenClaw, ready to use. <strong>NVIDIA OpenClaw</strong> made simple. <strong>€399</strong>.</p>
+<div class="hero-inner">
+<div class="hero-text">
+<div class="badge">🖥️ Local LLM Hardware</div>
+<h1>Run Private, Custom AI <span>On Your Desk</span></h1>
+<p class="subtitle">The power of <strong>NVIDIA Jetson Orin Nano</strong> meets OpenClaw. Your own <strong>private ChatGPT alternative</strong> — 67 TOPS of edge AI performance, zero monthly fees, total data privacy. A dedicated AI box that works offline and never sleeps.</p>
+<div class="hero-buttons">
+<a href="https://openclawhardware.dev/" class="btn-primary">Get the Box — €399</a>
+<a href="#roi" class="btn-secondary">Calculate Your Savings</a>
+</div>
+<div class="trust-row">
+<span>🛡️ 30-day money-back</span>
+<span>🌍 Ships worldwide</span>
+<span>⚡ 5-min setup</span>
+</div>
+</div>
+<div class="hero-image">
+<img src="https://openclawhardware.dev/clawbox-1.webp" alt="ClawBox — NVIDIA Jetson AI box in carbon fiber case" width="380" height="380" loading="eager">
+</div>
+</div>
 </section>
 
-<div class="layers">
-<div class="layer">
-<div class="layer-header"><span class="icon">🟢</span><span class="label">Software Layer</span></div>
-<h3>OpenClaw NVIDIA: Perfect Pairing</h3>
-<p>OpenClaw NVIDIA Jetson integration means hardware-accelerated AI inference. The Jetson Orin Nano's GPU powers OpenClaw's language models, voice recognition, and vision — all in one NVIDIA AI box.</p>
-</div>
-<div class="layer">
-<div class="layer-header"><span class="icon">⚡</span><span class="label">Compute Layer</span></div>
-<h3>Jetson Orin Nano: 67 TOPS</h3>
-<p>The NVIDIA Jetson Orin Nano inside this AI box delivers 67 trillion operations per second. OpenClaw Jetson Nano performance that rivals cloud APIs without the latency.</p>
-</div>
-<div class="layer">
-<div class="layer-header"><span class="icon">📦</span><span class="label">Integration Layer</span></div>
-<h3>Jetson Nano OpenClaw: Pre-Built</h3>
-<p>No need to flash images or compile from source. This Jetson Nano OpenClaw box comes fully pre-configured with 512GB NVMe storage and all dependencies installed.</p>
-</div>
-<div class="layer">
-<div class="layer-header"><span class="icon">🔒</span><span class="label">Privacy Layer</span></div>
-<h3>Private NVIDIA AI Box</h3>
-<p>Unlike cloud NVIDIA AI services, this Jetson AI box keeps all data on your local hardware. NVIDIA OpenClaw privacy means your conversations never leave your network.</p>
-</div>
-<div class="layer">
-<div class="layer-header"><span class="icon">🔌</span><span class="label">Power Layer</span></div>
-<h3>15W Jetson Efficiency</h3>
-<p>NVIDIA Jetson Orin Nano draws just 15W. Run your OpenClaw NVIDIA AI box 24/7 for about €15/year. The most efficient Jetson AI box for always-on operation.</p>
-</div>
-<div class="layer">
-<div class="layer-header"><span class="icon">💬</span><span class="label">Communication Layer</span></div>
-<h3>Multi-Platform Jetson AI</h3>
-<p>Your NVIDIA Jetson AI box connects to Telegram, WhatsApp, Discord, and the web. OpenClaw Jetson: one box, every messaging platform.</p>
+<!-- Social Proof -->
+<div class="social-proof">
+<p>Works with your favorite platforms</p>
+<div class="logos">
+<span>NVIDIA Jetson</span>
+<span>OpenClaw (185K+ ⭐)</span>
+<span>Telegram</span>
+<span>WhatsApp</span>
+<span>Discord</span>
+<span>Ollama</span>
 </div>
 </div>
 
-<p class="summary">Whether you're looking for an OpenClaw NVIDIA setup, a Jetson Nano OpenClaw box, or the best NVIDIA AI box for local inference — the ClawBox is your answer. NVIDIA Jetson Orin Nano hardware with OpenClaw pre-installed, shipping worldwide. The definitive Jetson AI box.</p>
-
-<section style="max-width:800px;margin:40px auto;padding:0 20px">
-<h2 style="color:#22d3ee;text-align:center;margin-bottom:30px;font-size:1.6rem">Frequently Asked Questions</h2>
-<details style="background:#1c1917;border-radius:12px;margin:12px 0;border:1px solid rgba(34,211,238,.15)">
-<summary style="cursor:pointer;padding:20px;color:#22d3ee;font-weight:600;font-size:1.1rem">Why choose NVIDIA Jetson AI box over cloud solutions?</summary>
-<div style="padding:0 20px 20px;color:#e2e8f0;opacity:.85">Your Jetson AI box processes everything locally. No latency, no data transmission, no monthly cloud fees. 67 TOPS of NVIDIA AI power in your hands.</div>
-</details>
-<details style="background:#1c1917;border-radius:12px;margin:12px 0;border:1px solid rgba(34,211,238,.15)">
-<summary style="cursor:pointer;padding:20px;color:#22d3ee;font-weight:600;font-size:1.1rem">What makes this Jetson AI box special?</summary>
-<div style="padding:0 20px 20px;color:#e2e8f0;opacity:.85">Pre-configured OpenClaw NVIDIA integration. Jetson Orin Nano 8GB + 512GB NVMe + OpenClaw software, ready to use out of the box.</div>
-</details>
-<details style="background:#1c1917;border-radius:12px;margin:12px 0;border:1px solid rgba(34,211,238,.15)">
-<summary style="cursor:pointer;padding:20px;color:#22d3ee;font-weight:600;font-size:1.1rem">How much power does the Jetson AI box consume?</summary>
-<div style="padding:0 20px 20px;color:#e2e8f0;opacity:.85">Just 15 watts for 24/7 operation. Your NVIDIA Jetson AI box can run continuously for about €15/year in electricity costs.</div>
-</details>
-<details style="background:#1c1917;border-radius:12px;margin:12px 0;border:1px solid rgba(34,211,238,.15)">
-<summary style="cursor:pointer;padding:20px;color:#22d3ee;font-weight:600;font-size:1.1rem">Can I customize my Jetson AI box?</summary>
-<div style="padding:0 20px 20px;color:#e2e8f0;opacity:.85">Absolutely! OpenClaw NVIDIA is fully extensible. Add custom skills, integrate new APIs, and create complex automation workflows on your Jetson AI box.</div>
-</details>
-<details style="background:#1c1917;border-radius:12px;margin:12px 0;border:1px solid rgba(34,211,238,.15)">
-<summary style="cursor:pointer;padding:20px;color:#22d3ee;font-weight:600;font-size:1.1rem">What comes with the Jetson AI box?</summary>
-<div style="padding:0 20px 20px;color:#e2e8f0;opacity:.85">NVIDIA Jetson Orin Nano 8GB, 512GB NVMe SSD, custom enclosure, power adapter, and OpenClaw pre-installed with 30-day money-back guarantee.</div>
-</details>
-<details style="background:#1c1917;border-radius:12px;margin:12px 0;border:1px solid rgba(34,211,238,.15)">
-<summary style="cursor:pointer;padding:20px;color:#22d3ee;font-weight:600;font-size:1.1rem">How does OpenClaw NVIDIA integration work?</summary>
-<div style="padding:0 20px 20px;color:#e2e8f0;opacity:.85">OpenClaw leverages Jetson's GPU for hardware-accelerated AI inference, enabling faster language processing, vision tasks, and multi-modal AI capabilities.</div>
-</details>
+<!-- Why Go Local -->
+<section class="s-dark">
+<div class="section-inner">
+<h2 class="section-title">Why Go Local? Cloud AI vs Your Own Box</h2>
+<p class="section-subtitle">Three reasons people are switching from cloud AI to dedicated hardware.</p>
+<div class="why-grid">
+<div class="why-card">
+<div class="icon">🛡️</div>
+<h3>Your Data Never Leaves Your Office</h3>
+<p>Cloud AI sends every conversation to remote servers. A Jetson AI box processes everything locally — your private documents, business data, and personal conversations never touch the internet. Privacy by architecture, not by policy.</p>
+</div>
+<div class="why-card">
+<div class="icon">💰</div>
+<h3>Cut Cloud Costs by 100%</h3>
+<p>ChatGPT Plus: $240/year. Claude Pro: $240/year. Cloud VPS: $600+/year. A Jetson AI box: €399 once, ~€15/year electricity. Pay once, run forever. The math is simple.</p>
+</div>
+<div class="why-card">
+<div class="icon">🔌</div>
+<h3>Works Without Internet</h3>
+<p>Cloud AI goes down when your internet drops or when the provider has an outage. Your Jetson AI box keeps working regardless — all models run locally. True reliability for always-on AI assistance.</p>
+</div>
+</div>
+</div>
 </section>
 
-<section style="max-width:900px;margin:40px auto;padding:0 20px">
-<h2 style="color:#22d3ee;text-align:center;margin-bottom:30px;font-size:1.6rem">Jetson AI Box Comparison</h2>
-<div style="overflow-x:auto">
-<table style="width:100%;background:#1c1917;border-radius:12px;border:1px solid rgba(34,211,238,.15);border-collapse:collapse">
+<!-- ROI Calculator -->
+<section class="s-light" id="roi">
+<div class="section-inner">
+<h2 class="section-title">When Does the Jetson AI Box Pay for Itself?</h2>
+<p class="section-subtitle">Slide to see how quickly you'll break even compared to cloud AI subscriptions.</p>
+<div class="roi-box">
+<label>How much do you spend on cloud AI per month?</label>
+<input type="range" class="roi-slider" id="roiSlider" min="10" max="200" value="20" step="5">
+<div class="roi-result">
+<div style="color:#9ca3af;font-size:.9rem;margin-bottom:4px">$<span id="roiAmount">20</span>/month → ClawBox pays for itself in:</div>
+<div class="months"><span id="roiMonths">20</span> months</div>
+</div>
+<div class="roi-detail">After that, every month is pure savings. At $<span id="roiYearly">240</span>/year, you save $<span id="roiSave3">320</span> over 3 years.</div>
+</div>
+</div>
+<script>
+(function(){
+  var s=document.getElementById('roiSlider'),a=document.getElementById('roiAmount'),m=document.getElementById('roiMonths'),y=document.getElementById('roiYearly'),sv=document.getElementById('roiSave3');
+  function calc(){var v=+s.value;a.textContent=v;var mo=Math.ceil(399/v);m.textContent=mo;y.textContent=v*12;sv.textContent=(v*36-399-45).toFixed(0);}
+  s.addEventListener('input',calc);calc();
+})();
+</script>
+</section>
+
+<!-- Features 2x3 Grid -->
+<section class="s-dark">
+<div class="section-inner">
+<h2 class="section-title">What Your Jetson AI Box Can Do</h2>
+<p class="section-subtitle">More than a local ChatGPT — it's a complete AI workstation.</p>
+<div class="feat-grid">
+<div class="feat-card">
+<div class="fi">🧠</div>
+<div><h3>Run Local LLMs</h3><p>Llama 3, Mistral, Phi-3, Code Llama — run open-source language models locally via Ollama with NVIDIA TensorRT optimization.</p></div>
+</div>
+<div class="feat-card">
+<div class="fi">🌐</div>
+<div><h3>Browser Automation</h3><p>Your AI browses the web, researches topics, fills forms, compares prices — like a research assistant that works around the clock.</p></div>
+</div>
+<div class="feat-card">
+<div class="fi">🎙️</div>
+<div><h3>Voice Processing</h3><p>Whisper speech-to-text runs natively on the Jetson GPU. Transcribe meetings, voice memos, and podcasts — all processed locally.</p></div>
+</div>
+<div class="feat-card">
+<div class="fi">💬</div>
+<div><h3>Multi-Platform Chat</h3><p>Connect Telegram, WhatsApp, Discord, or the web UI. One Jetson box handles all your messaging platforms simultaneously.</p></div>
+</div>
+<div class="feat-card">
+<div class="fi">📅</div>
+<div><h3>Proactive Assistant</h3><p>Monitors email, calendar, and notifications. Reminds you of meetings, summarizes messages, takes initiative on tasks you define.</p></div>
+</div>
+<div class="feat-card">
+<div class="fi">🔧</div>
+<div><h3>Fully Hackable</h3><p>Full SSH access, Docker, Python, CUDA toolkit. Install any model, build custom workflows, integrate APIs. Your hardware, your rules.</p></div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- How It Works -->
+<section class="s-light">
+<div class="section-inner">
+<h2 class="section-title">From Unboxing to AI in 5 Minutes</h2>
+<p class="section-subtitle">No Linux expertise required. If you can plug in a router, you can set up a Jetson AI box.</p>
+<div class="steps-row">
+<div class="step">
+<div class="step-num">1</div>
+<h3>Unbox</h3>
+<p>ClawBox, power adapter, Ethernet cable, quick start guide.</p>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<h3>Plug In</h3>
+<p>Connect power + Ethernet. Boots in 30 seconds with everything ready.</p>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<h3>Link Apps</h3>
+<p>Open web dashboard. Scan QR codes to connect Telegram, WhatsApp, Discord.</p>
+</div>
+<div class="step">
+<div class="step-num">4</div>
+<h3>Chat Privately</h3>
+<p>Your private AI assistant is live. Ask anything, automate tasks, deploy models.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Comparison -->
+<section class="s-dark">
+<div class="section-inner">
+<h2 class="section-title">Jetson AI Box vs Cloud Chatbots &amp; DIY</h2>
+<p class="section-subtitle">How dedicated local LLM hardware compares to cloud subscriptions and DIY builds.</p>
+<div class="table-scroll">
+<table class="compare-table">
 <thead>
-<tr style="background:rgba(34,211,238,.1)">
-<th style="padding:16px;text-align:left;color:#22d3ee;font-weight:600">Feature</th>
-<th style="padding:16px;text-align:center;color:#22d3ee;font-weight:600">ClawBox (Jetson AI)</th>
-<th style="padding:16px;text-align:center;color:#e2e8f0">DIY Jetson Setup</th>
-<th style="padding:16px;text-align:center;color:#e2e8f0">Cloud AI APIs</th>
+<tr>
+<th>Feature</th>
+<th>ClawBox (Jetson) ⭐</th>
+<th>ChatGPT Plus</th>
+<th>DIY Jetson Build</th>
+<th>Cloud VPS</th>
 </tr>
 </thead>
 <tbody>
-<tr style="background:rgba(12,10,9,.7)">
-<td style="padding:14px;color:#e2e8f0">Setup Time</td>
-<td style="padding:14px;text-align:center;color:#10b981">5 minutes</td>
-<td style="padding:14px;text-align:center;color:#ef4444">8+ hours</td>
-<td style="padding:14px;text-align:center;color:#22d3ee">15 minutes</td>
+<tr>
+<td>🔒 Data Privacy</td>
+<td><span class="check">✔</span> 100% Local</td>
+<td><span class="cross">✘</span> OpenAI servers</td>
+<td><span class="check">✔</span> Local</td>
+<td><span class="cross">✘</span> Cloud</td>
 </tr>
-<tr style="background:rgba(28,25,23,.9)">
-<td style="padding:14px;color:#e2e8f0">AI Performance</td>
-<td style="padding:14px;text-align:center;color:#10b981">67 TOPS</td>
-<td style="padding:14px;text-align:center;color:#10b981">67 TOPS</td>
-<td style="padding:14px;text-align:center;color:#22d3ee">Variable</td>
+<tr>
+<td>Monthly Cost</td>
+<td><span class="check">✔</span> €0</td>
+<td><span class="cross">✘</span> $20/mo</td>
+<td><span class="check">✔</span> €0</td>
+<td><span class="cross">✘</span> $50+/mo</td>
 </tr>
-<tr style="background:rgba(12,10,9,.7)">
-<td style="padding:14px;color:#e2e8f0">Monthly Cost</td>
-<td style="padding:14px;text-align:center;color:#10b981">€1.25</td>
-<td style="padding:14px;text-align:center;color:#10b981">€1.25</td>
-<td style="padding:14px;text-align:center;color:#ef4444">€50-500+</td>
+<tr>
+<td>AI Performance</td>
+<td>67 TOPS ✅</td>
+<td>Unlimited (cloud)</td>
+<td>67 TOPS</td>
+<td>Varies</td>
 </tr>
-<tr style="background:rgba(28,25,23,.9)">
-<td style="padding:14px;color:#e2e8f0">Data Privacy</td>
-<td style="padding:14px;text-align:center;color:#10b981">✓ Local</td>
-<td style="padding:14px;text-align:center;color:#10b981">✓ Local</td>
-<td style="padding:14px;text-align:center;color:#ef4444">✗ Cloud</td>
+<tr>
+<td>Setup Time</td>
+<td>5 minutes ✅</td>
+<td>2 minutes</td>
+<td>8–16 hours</td>
+<td>2–4 hours</td>
 </tr>
-<tr style="background:rgba(12,10,9,.7)">
-<td style="padding:14px;color:#e2e8f0">Support</td>
-<td style="padding:14px;text-align:center;color:#10b981">✓ Included</td>
-<td style="padding:14px;text-align:center;color:#ef4444">DIY only</td>
-<td style="padding:14px;text-align:center;color:#22d3ee">API docs</td>
+<tr>
+<td>Works Offline</td>
+<td><span class="check">✔</span></td>
+<td><span class="cross">✘</span></td>
+<td><span class="check">✔</span></td>
+<td><span class="cross">✘</span></td>
+</tr>
+<tr>
+<td>Browser Automation</td>
+<td><span class="check">✔</span> Built-in</td>
+<td><span class="cross">✘</span></td>
+<td>Manual setup</td>
+<td>Manual setup</td>
+</tr>
+<tr>
+<td>Multi-Platform</td>
+<td><span class="check">✔</span> All apps</td>
+<td>Web/App only</td>
+<td>Manual setup</td>
+<td>Custom build</td>
+</tr>
+<tr>
+<td>Power Draw</td>
+<td>15W ✅</td>
+<td>N/A</td>
+<td>15W</td>
+<td>N/A</td>
 </tr>
 </tbody>
 </table>
 </div>
-</section>
-
-<section style="max-width:800px;margin:40px auto;padding:0 20px">
-<h2 style="color:#22d3ee;text-align:center;margin-bottom:30px;font-size:1.6rem">How Your Jetson AI Box Works</h2>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:24px">
-<div style="background:#1c1917;border-radius:12px;padding:24px;border:1px solid rgba(34,211,238,.15);text-align:center">
-<div style="background:rgba(34,211,238,.2);border-radius:50%;width:50px;height:50px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;color:#22d3ee;font-weight:700;font-size:1.4rem">1</div>
-<h3 style="color:#22d3ee;margin-bottom:12px">Unbox NVIDIA Hardware</h3>
-<p style="color:#e2e8f0;opacity:.85;font-size:.92rem">Receive your pre-configured Jetson AI box with OpenClaw NVIDIA integration ready to go.</p>
-</div>
-<div style="background:#1c1917;border-radius:12px;padding:24px;border:1px solid rgba(34,211,238,.15);text-align:center">
-<div style="background:rgba(34,211,238,.2);border-radius:50%;width:50px;height:50px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;color:#22d3ee;font-weight:700;font-size:1.4rem">2</div>
-<h3 style="color:#22d3ee;margin-bottom:12px">Connect & Power On</h3>
-<p style="color:#e2e8f0;opacity:.85;font-size:.92rem">Plug in ethernet and power. Your NVIDIA Jetson AI box boots OpenClaw automatically.</p>
-</div>
-<div style="background:#1c1917;border-radius:12px;padding:24px;border:1px solid rgba(34,211,238,.15);text-align:center">
-<div style="background:rgba(34,211,238,.2);border-radius:50%;width:50px;height:50px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;color:#22d3ee;font-weight:700;font-size:1.4rem">3</div>
-<h3 style="color:#22d3ee;margin-bottom:12px">Link Messaging Apps</h3>
-<p style="color:#e2e8f0;opacity:.85;font-size:.92rem">Connect your Jetson AI box to Telegram, WhatsApp, or Discord for remote access.</p>
-</div>
-<div style="background:#1c1917;border-radius:12px;padding:24px;border:1px solid rgba(34,211,238,.15);text-align:center">
-<div style="background:rgba(34,211,238,.2);border-radius:50%;width:50px;height:50px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;color:#22d3ee;font-weight:700;font-size:1.4rem">4</div>
-<h3 style="color:#22d3ee;margin-bottom:12px">Deploy Custom AI</h3>
-<p style="color:#e2e8f0;opacity:.85;font-size:.92rem">Leverage 67 TOPS of NVIDIA power for custom models, automation, and advanced AI workflows.</p>
-</div>
 </div>
 </section>
 
-<section style="max-width:800px;margin:40px auto;padding:0 20px">
-<h2 style="color:#22d3ee;text-align:center;margin-bottom:30px;font-size:1.6rem">Related Resources</h2>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;text-align:center">
-<a href="https://dedicated-ai-hardware.com" style="display:block;background:#1c1917;border-radius:12px;padding:20px;border:1px solid rgba(34,211,238,.15);color:#22d3ee;text-decoration:none;transition:transform .2s" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
-<div style="font-size:1.8rem;margin-bottom:8px">⚡</div>
-<div style="font-weight:600">Dedicated AI Hardware</div>
-<div style="color:#e2e8f0;opacity:.7;font-size:.85rem">Professional AI workstations</div>
-</a>
-<a href="https://local-ai-box.com" style="display:block;background:#1c1917;border-radius:12px;padding:20px;border:1px solid rgba(34,211,238,.15);color:#22d3ee;text-decoration:none;transition:transform .2s" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
-<div style="font-size:1.8rem;margin-bottom:8px">🏠</div>
-<div style="font-weight:600">Local AI Box</div>
-<div style="color:#e2e8f0;opacity:.7;font-size:.85rem">On-premises AI solutions</div>
-</a>
-<a href="https://plug-and-play-ai.com" style="display:block;background:#1c1917;border-radius:12px;padding:20px;border:1px solid rgba(34,211,238,.15);color:#22d3ee;text-decoration:none;transition:transform .2s" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
-<div style="font-size:1.8rem;margin-bottom:8px">🔌</div>
-<div style="font-weight:600">Plug and Play AI</div>
-<div style="color:#e2e8f0;opacity:.7;font-size:.85rem">Ready-to-use AI hardware</div>
-</a>
-<a href="https://openclawhardware.dev/compare" style="display:block;background:#1c1917;border-radius:12px;padding:20px;border:1px solid rgba(34,211,238,.15);color:#22d3ee;text-decoration:none;transition:transform .2s" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
-<div style="font-size:1.8rem;margin-bottom:8px">⚖️</div>
-<div style="font-weight:600">Compare AI Hardware</div>
-<div style="color:#e2e8f0;opacity:.7;font-size:.85rem">ClawBox vs alternatives</div>
-</a>
-<a href="https://openclawhardware.dev/compare/cloud-ai" style="display:block;background:#1c1917;border-radius:12px;padding:20px;border:1px solid rgba(34,211,238,.15);color:#22d3ee;text-decoration:none;transition:transform .2s" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
-<div style="font-size:1.8rem;margin-bottom:8px">☁️</div>
-<div style="font-weight:600">Local vs Cloud AI</div>
-<div style="color:#e2e8f0;opacity:.7;font-size:.85rem">Privacy and cost comparison</div>
-</a>
-<a href="https://openclawhardware.dev/compare/raspberry-pi" style="display:block;background:#1c1917;border-radius:12px;padding:20px;border:1px solid rgba(34,211,238,.15);color:#22d3ee;text-decoration:none;transition:transform .2s" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
-<div style="font-size:1.8rem;margin-bottom:8px">🥧</div>
-<div style="font-weight:600">Jetson vs Raspberry Pi</div>
-<div style="color:#e2e8f0;opacity:.7;font-size:.85rem">AI performance comparison</div>
-</a>
+<!-- FAQ -->
+<section class="s-light">
+<div class="section-inner">
+<h2 class="section-title">Jetson AI Box FAQ</h2>
+<p class="section-subtitle">Common questions about local LLM hardware and private AI assistants.</p>
+
+<div class="faq-item"><details>
+<summary>What is a Jetson AI box?</summary>
+<div class="faq-body">A Jetson AI box is a dedicated hardware device built on NVIDIA's Jetson Orin Nano platform that runs AI models locally on your desk. Think of it as a private ChatGPT alternative — it processes everything on-device with no cloud dependency, no monthly subscriptions, and complete data privacy. ClawBox comes pre-installed with OpenClaw and all AI models optimized for the NVIDIA GPU.</div>
+</details></div>
+
+<div class="faq-item"><details>
+<summary>Why use a Jetson AI box instead of ChatGPT?</summary>
+<div class="faq-body">Three key reasons: <strong>Privacy</strong> — your data never leaves your network, unlike ChatGPT which processes everything on OpenAI's servers. <strong>Cost</strong> — €399 one-time vs $240/year for ChatGPT Plus ($480 over 2 years). <strong>Capabilities</strong> — a Jetson AI box offers browser automation, multi-platform messaging, proactive scheduling, and offline operation that cloud AI simply can't provide.</div>
+</details></div>
+
+<div class="faq-item"><details>
+<summary>What AI models can it run?</summary>
+<div class="faq-body">The Jetson Orin Nano runs quantized versions of leading open-source models: Llama 3, Mistral, Phi-3, Code Llama, Qwen, and more via Ollama. It also runs Whisper for speech-to-text and CLIP for image understanding. NVIDIA TensorRT automatically optimizes every model for maximum performance on the Jetson GPU architecture.</div>
+</details></div>
+
+<div class="faq-item"><details>
+<summary>How does it compare to building my own Jetson setup?</summary>
+<div class="faq-body">A DIY Jetson build requires: sourcing the board (~€250), buying a case and SSD (~€100-150), flashing JetPack OS, configuring CUDA/cuDNN, installing OpenClaw, optimizing models, and troubleshooting compatibility — 8-16 hours of work. ClawBox ships ready to go with everything pre-configured: Jetson + 512GB NVMe + carbon fiber case + OpenClaw = 5-minute setup.</div>
+</details></div>
+
+<div class="faq-item"><details>
+<summary>How much electricity does it use?</summary>
+<div class="faq-body">The NVIDIA Jetson Orin Nano draws just 15 watts under full AI workload — about the same as an LED light bulb. Running 24/7 for a full year costs approximately €15 in electricity. The carbon fiber case uses passive cooling (no fans), so it's completely silent. It's designed to sit on your desk and be forgotten about until you need it.</div>
+</details></div>
+
+<div class="faq-item"><details>
+<summary>Can I use it for business or sensitive data?</summary>
+<div class="faq-body">Yes — that's one of its strongest use cases. Since all processing happens on-premises, your confidential documents, client data, and business communications never leave your network. NVIDIA Jetson is industrial-grade hardware (used in autonomous vehicles, medical devices). It meets GDPR and data sovereignty requirements by design, since no third party ever sees your data.</div>
+</details></div>
+
+<div class="faq-item"><details>
+<summary>What if I'm not satisfied?</summary>
+<div class="faq-body">We offer a 30-day money-back satisfaction guarantee. If the Jetson AI box doesn't meet your expectations, return it for a full refund. Ships worldwide with tracked delivery. Zero risk to try.</div>
+</details></div>
 </div>
 </section>
 
-<section class="cta">
-<h2>NVIDIA Jetson AI Box — €399</h2>
-<a href="https://openclawhardware.dev/" target="_blank">Get ClawBox — €399 →</a>
+<!-- Related -->
+<section class="s-dark">
+<div class="section-inner">
+<h2 class="section-title">Related Guides</h2>
+<div class="related-grid">
+<a href="https://jetson-ai-assistant.com">Jetson AI Assistant</a>
+<a href="https://local-ai-box.com">Local AI Box</a>
+<a href="https://edge-ai-hardware.com">Edge AI Hardware</a>
+<a href="https://dedicated-ai-hardware.com">Dedicated AI Hardware</a>
+<a href="https://openclawhardware.dev/compare/cloud-ai">Cloud AI Comparison</a>
+<a href="https://openclawhardware.dev/setup-guide">Setup Guide</a>
+</div>
+</div>
 </section>
 
+<!-- Final CTA -->
+<section class="final-cta">
+<h2>Your Private AI. One Box. Zero Subscriptions.</h2>
+<p class="price">ClawBox: NVIDIA Jetson Orin Nano · 512GB NVMe · OpenClaw · €399</p>
+<p class="guarantee">🛡️ 30-day money-back guarantee · Free lifetime updates · Ships worldwide</p>
+<a href="https://openclawhardware.dev/" class="btn-primary" style="font-size:1.15rem;padding:18px 40px">Get ClawBox →</a>
+</section>
 
-<div class="related-sites" style="text-align:center;padding:30px 20px;border-top:1px solid rgba(255,107,53,0.15)">
-  <p style="color:#6b7280;font-size:.85rem;margin-bottom:10px">Related Resources:</p>
-  <a href="https://diy-ai-assistant.com" style="color:#ff6b35;text-decoration:none;margin:0 10px">DIY AI Assistant</a>
-  <a href="https://openclaw-hardware.com" style="color:#ff6b35;text-decoration:none;margin:0 10px">OpenClaw Hardware</a>
-  <a href="https://ai-assistant-box.com" style="color:#ff6b35;text-decoration:none;margin:0 10px">AI Assistant Box</a>
-</div>
-<!-- redirect text removed for SEO -->
+<p class="seo-block">A Jetson AI box is the most practical way to run a private ChatGPT alternative at home or in the office. Built on NVIDIA's Jetson Orin Nano (67 TOPS, 8GB, 1024 CUDA cores), ClawBox delivers local LLM hardware with the simplicity of a consumer device. No cloud dependency, no monthly API fees, no data leaving your network. Whether you're searching for edge AI hardware, a local LLM solution, or a private AI assistant box — the NVIDIA Jetson platform delivers the performance, privacy, and reliability that cloud subscriptions can't match.</p>
 
 <!-- Redirect Popup -->
 <div id="redirect-overlay" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);z-index:9999;justify-content:center;align-items:center;backdrop-filter:blur(4px)">
@@ -252,7 +468,7 @@ body{font-family:'Rubik',sans-serif;background:#0c0a09;color:#e2e8f0;min-height:
 <p style="color:#9ca3af;margin:0 0 4px;font-size:.95rem">Get ClawBox &mdash; &euro;399 one-time, ships worldwide</p>
 <p id="redirect-timer" style="color:#6b7280;margin:0 0 20px;font-size:.85rem">Redirecting in <span id="countdown">10</span> seconds...</p>
 <div style="display:flex;gap:12px;justify-content:center">
-<a href="https://openclawhardware.dev/" id="redirect-confirm" style="padding:12px 28px;background:linear-gradient(135deg,#1f6feb,#58a6ff);color:#fff;text-decoration:none;border-radius:8px;font-weight:700;font-size:.95rem;transition:transform .2s">Go to Store &rarr;</a>
+<a href="https://openclawhardware.dev/" id="redirect-confirm" style="padding:12px 28px;background:linear-gradient(135deg,#22d3ee,#06b6d4);color:#000;text-decoration:none;border-radius:8px;font-weight:700;font-size:.95rem;transition:transform .2s">Go to Store →</a>
 <button id="redirect-cancel" style="padding:12px 28px;background:#21262d;color:#9ca3af;border:1px solid #30363d;border-radius:8px;font-size:.95rem;cursor:pointer;transition:background .2s" onmouseover="this.style.background='#30363d'" onmouseout="this.style.background='#21262d'">Stay Here</button>
 </div>
 </div>
@@ -288,5 +504,4 @@ body{font-family:'Rubik',sans-serif;background:#0c0a09;color:#e2e8f0;min-height:
 </script>
 
 </body>
-
 </html>
